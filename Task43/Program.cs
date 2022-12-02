@@ -29,17 +29,26 @@ double CoordinateX(double ba, double ka, double bc, double kc)
     return x;
 }
 
-double СoordinateY(double ka, double xa, double ba)
+double СoordinateY1(double ka, double xa, double ba)
 {
     double y = ka * xa + ba;
     y = Math.Round(y, 1);
     return y;
 }
 
+double СoordinateY2(double kc, double xa, double bc)
+{
+    double y = kc * xa + bc;
+    y = Math.Round(y, 1);
+    return y;
+}
+
 double resultX = CoordinateX(b1, k1, b2, k2);
 Console.WriteLine($"Координата X: {resultX}");
-double resultY = СoordinateY(k1, resultX, b1);
-Console.WriteLine($"Координата Y: {resultY}");
+double resultY1 = СoordinateY1(k1, resultX, b1);
+Console.WriteLine($"Координата Y1: {resultY1}");
+double resultY2 = СoordinateY2(k2, resultX, b2);
+Console.WriteLine($"Координата Y2: {resultY2}");
 
-if (resultX == resultY) Console.WriteLine($"Координата точки пересечения двух прямых -> {resultX},{resultY}");
-Console.WriteLine("У заданных прямых нет точки пересечения");
+if (resultY1 == resultY2) Console.WriteLine($"Координата точки пересечения двух прямых -> {resultX}:{resultY1}");
+else Console.WriteLine($"Точка с координатами {resultX}:{resultY1} не является точкой пересечения этих прямых");
