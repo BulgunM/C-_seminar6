@@ -9,6 +9,7 @@
 // x (k1 - k2) = b2 - b1
 // x = (b2 - b1) / (k1 - k2)
 
+Console.WriteLine("Заданы две прямые: y = k1 * x + b1, y = k2 * x + b2");
 Console.WriteLine("Введите значения");
 Console.Write("b1: ");
 double b1 = Convert.ToDouble(Console.ReadLine());
@@ -36,21 +37,12 @@ double СoordinateY1(double ka, double xa, double ba)
     return y;
 }
 
-double СoordinateY2(double kc, double xa, double bc)
+if (k1 != k2)
 {
-    double y = kc * xa + bc;
-    y = Math.Round(y, 1);
-    return y;
+    double resultX = CoordinateX(b1, k1, b2, k2);
+    Console.WriteLine($"Координата X: {resultX}");
+    double resultY1 = СoordinateY1(k1, resultX, b1);
+    Console.WriteLine($"Координата Y1: {resultY1}");
+    Console.WriteLine($"Координата точки пересечения двух прямых -> {resultX}:{resultY1}");
 }
-
-double resultX = CoordinateX(b1, k1, b2, k2);
-Console.WriteLine($"Координата X: {resultX}");
-
-double resultY1 = СoordinateY1(k1, resultX, b1);
-Console.WriteLine($"Координата Y1: {resultY1}");
-
-double resultY2 = СoordinateY2(k2, resultX, b2);
-Console.WriteLine($"Координата Y2: {resultY2}");
-
-if (k1 == k2) Console.WriteLine($"Прямые параллельны");
-else Console.WriteLine($"Координата точки пересечения двух прямых -> {resultX}:{resultY1}");
+Console.WriteLine($"Прямые параллельны");
