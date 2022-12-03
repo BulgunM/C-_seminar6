@@ -45,10 +45,12 @@ double СoordinateY2(double kc, double xa, double bc)
 
 double resultX = CoordinateX(b1, k1, b2, k2);
 Console.WriteLine($"Координата X: {resultX}");
+
 double resultY1 = СoordinateY1(k1, resultX, b1);
 Console.WriteLine($"Координата Y1: {resultY1}");
+
 double resultY2 = СoordinateY2(k2, resultX, b2);
 Console.WriteLine($"Координата Y2: {resultY2}");
 
-if (resultY1 == resultY2) Console.WriteLine($"Координата точки пересечения двух прямых -> {resultX}:{resultY1}");
-else Console.WriteLine($"Точка с координатами {resultX}:{resultY1} не является точкой пересечения этих прямых");
+if (k1 == k2) Console.WriteLine($"Прямые параллельны");
+else Console.WriteLine($"Координата точки пересечения двух прямых -> {resultX}:{resultY1}");
