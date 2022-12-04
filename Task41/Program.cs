@@ -4,7 +4,7 @@
 // -1, -7, 567, 89, 223-> 3
 
 Console.WriteLine("Задайте количество чисел для ввода");
-int number = Convert.ToInt32(Console.ReadLine());
+// int number = Convert.ToInt32(Console.ReadLine()); эта переменная не нужна
 
 Console.WriteLine("Введите случайные числа через запятую");
 string[] numbers = Console.ReadLine().Split(',');
